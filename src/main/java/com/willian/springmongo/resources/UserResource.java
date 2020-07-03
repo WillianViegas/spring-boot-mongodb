@@ -50,4 +50,11 @@ public class UserResource {
 	//retorna a resposta vazia por ser void
 	return ResponseEntity.created(uri).build();
 	}
+	
+	//@DeleteMapping
+	@RequestMapping(value= "/{id}", method=RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable String id){
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
 }
